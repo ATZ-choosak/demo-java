@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  demo:
+    image: demo-image
+    container_name: Demo-6410110109
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "9109:9109"
+    volumes:
+      - ./pkg/demo.war:/usr/local/tomcat/webapps/demo.war
+    environment:
+      - JAVA_OPTS=-Dapp.env=staging
+    networks:
+      - demo_network
+
+networks:
+  demo_network:
+    driver: bridge
