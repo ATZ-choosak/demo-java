@@ -34,8 +34,8 @@ pipeline {
                     sh """
                     mvn sonar:sonar \
                       -Dsonar.projectKey=coe6410110109 \
-                      -Dsonar.host.url=http://172.18.0.3:9000 \
-                      -Dsonar.login=sqp_7f566fb7200e285b361977e9f1699a9f4c862403
+                      -Dsonar.host.url=http://172.18.0.2:9000 \
+                      -Dsonar.login=sqp_46ed7560877734d83857a9f15725fcc983fa47d4
                     """
                 }
             }
