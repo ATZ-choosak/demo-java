@@ -7,7 +7,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "9109:9109"
+      - "9109:8080"
     volumes:
       - ./pkg/demo.war:/usr/local/tomcat/webapps/demo.war
     environment:
