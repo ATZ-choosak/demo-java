@@ -11,6 +11,8 @@ pipeline {
                 dir('/var/jenkins_home/demo') {
                     script {
                         sh 'mvn clean verify'
+                        sh 'mkdir pkg'
+                        sh 'mv target/demo.war pkg/demo.war'
                     }
                 }
             }
