@@ -2,7 +2,6 @@ version: '3.8'
 
 services:
   demo:
-    image: demo-image
     container_name: Demo-6410110109
     build:
       context: .
