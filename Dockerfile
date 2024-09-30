@@ -10,7 +10,7 @@ RUN apt-get update && \
   rm -rf /var/lib/apt/lists/* && apt-get clean && apt-get purge
 
 RUN echo "export JAVA_OPTS=\"-Dapp.env=staging\"" > /usr/local/tomcat/bin/setenv.sh
-COPY target/demo.war /usr/local/tomcat/webapps/demo.war
+COPY pkg/demo.war /usr/local/tomcat/webapps/demo.war
 
 EXPOSE 9109
 CMD ["catalina.sh", "run"]
