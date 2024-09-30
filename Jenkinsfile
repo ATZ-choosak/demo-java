@@ -12,14 +12,6 @@ pipeline {
             }
         }
 
-        stage('Start Services with Docker Compose') {
-            steps {
-                script {
-                    sh "docker-compose up -d"
-                }
-            }
-        }
-
         stage('Run Maven Clean and Verify') {
             steps {
                 script {
@@ -35,18 +27,11 @@ pipeline {
                     mvn sonar:sonar \
                       -Dsonar.projectKey=coe6410110109 \
                       -Dsonar.host.url=http://172.18.0.2:9000 \
-                      -Dsonar.login=sqp_46ed7560877734d83857a9f15725fcc983fa47d4
+                      -Dsonar.login=sqp_bdb933b0a7b129bb2909e39974ec7f108788fb16
                     """
                 }
             }
         }
     }
 
-    post {
-        always {
-            script {
-                sh "docker-compose down"
-            }
-        }
-    }
 }
